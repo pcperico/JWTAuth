@@ -1,4 +1,4 @@
 bin
 packages
 obj
-*.vs/*
+JWTAuth/.vs
