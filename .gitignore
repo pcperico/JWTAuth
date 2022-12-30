@@ -1,5 +1,7 @@
 bin
 packages
 obj
-JWTAuth/.vs
-.vs/
+*.suo
+*.vsidx
+.vs/JWTAuth
+.vs/*
