@@ -21,7 +21,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public IResult Login(UserLogin user)
+        public IActionResult Login(UserLogin user)
         {
             if (user.UserName == "admin" && user.Password == "123456")
             {
@@ -50,9 +50,9 @@ namespace WebApp.Controllers
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 var jwtToken = tokenHandler.WriteToken(token);
                 var stringToken = tokenHandler.WriteToken(token);
-                return  Results.Ok(stringToken);
+                return Ok(stringToken);
             }
-            return  Results.Unauthorized();
+            return Unauthorized();
         }
     }
 }
