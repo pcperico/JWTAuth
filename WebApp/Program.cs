@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using WebApp.Controllers;
+using WebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,7 +41,9 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 
-app.MapControllers().RequireAuthorization();
+//app.MapControllers().RequireAuthorization();
+
+ 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
